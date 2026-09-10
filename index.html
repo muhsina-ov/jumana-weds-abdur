@@ -263,7 +263,7 @@ var observer=new IntersectionObserver(function(entries) {if(entries[0].isInterse
         <div class="flow-time">6:00 PM</div>
         <div class="flow-node"><span class="flow-diamond"></span></div>
         <div class="flow-details">
-          <div class="flow-title">Nikah Ceremony</div>
+          <div class="flow-title">NIKAH CEREMONY</div>
           <div class="flow-desc">Solemnization of the sacred marriage contract</div>
         </div>
       </div>
@@ -273,7 +273,7 @@ var observer=new IntersectionObserver(function(entries) {if(entries[0].isInterse
         <div class="flow-time">7:00 PM</div>
         <div class="flow-node"><span class="flow-diamond"></span></div>
         <div class="flow-details">
-          <div class="flow-title">Meet &amp; Greet</div>
+          <div class="flow-title">MEET &amp; GREET</div>
           <div class="flow-desc">Blessings, congratulations &amp; photographs</div>
         </div>
       </div>
@@ -283,7 +283,7 @@ var observer=new IntersectionObserver(function(entries) {if(entries[0].isInterse
         <div class="flow-time">8:00 PM</div>
         <div class="flow-node"><span class="flow-diamond"></span></div>
         <div class="flow-details">
-          <div class="flow-title">Royal Feast</div>
+          <div class="flow-title">ROYAL FEAST</div>
           <div class="flow-desc">Dinner served in honour of our esteemed guests</div>
         </div>
       </div>
@@ -293,7 +293,7 @@ var observer=new IntersectionObserver(function(entries) {if(entries[0].isInterse
         <div class="flow-time">11:00 PM</div>
         <div class="flow-node"><span class="flow-diamond"></span></div>
         <div class="flow-details">
-          <div class="flow-title">Julwa (Rukhsati)</div>
+          <div class="flow-title">JULWA (RUKHSATI)</div>
           <div class="flow-desc">Warm farewell with duas &amp; best wishes</div>
         </div>
       </div>
@@ -306,44 +306,53 @@ var observer=new IntersectionObserver(function(entries) {if(entries[0].isInterse
       if (!timeline || !rose) return;
 
       var rows = timeline.querySelectorAll('.flow-row');
+      if (rows.length < 2) return;
+
       var ticking = false;
 
       function updateRosePosition() {
-        if (!timeline || !rose || rows.length < 2) return;
-        var firstNode = rows[0].querySelector('.flow-node');
-        var lastNode = rows[rows.length - 1].querySelector('.flow-node');
-        if (!firstNode || !lastNode) return;
+        var firstRow = rows[0];
+        var lastRow = rows[rows.length - 1];
+        if (!firstRow || !lastRow) return;
 
         var timelineRect = timeline.getBoundingClientRect();
+        var firstRowRect = firstRow.getBoundingClientRect();
+        var lastRowRect = lastRow.getBoundingClientRect();
+
+        // Exact center of first and last row relative to viewport
+        var firstCenter = firstRowRect.top + (firstRowRect.height / 2);
+        var lastCenter = lastRowRect.top + (lastRowRect.height / 2);
+
         var windowHeight = window.innerHeight || document.documentElement.clientHeight;
-
-        // Calculate progress as the timeline scrolls through center of viewport
         var triggerPoint = windowHeight * 0.55;
-        var startY = timelineRect.top + firstNode.offsetTop;
-        var endY = timelineRect.top + lastNode.offsetTop;
-        var totalDist = lastNode.offsetTop - firstNode.offsetTop;
 
-        var currentProgress = (triggerPoint - startY) / (endY - startY);
-        currentProgress = Math.max(0, Math.min(1, currentProgress));
+        var progress = 0;
+        if (lastCenter > firstCenter) {
+          progress = (triggerPoint - firstCenter) / (lastCenter - firstCenter);
+        }
+        progress = Math.max(0, Math.min(1, progress));
 
-        var translateY = currentProgress * totalDist;
-        rose.style.transform = 'translateY(' + translateY + 'px) scale(' + (0.95 + 0.1 * Math.sin(currentProgress * Math.PI)) + ')';
+        // Exact distance relative to the timeline container
+        var startTop = (firstRowRect.top - timelineRect.top) + (firstRowRect.height / 2) - 16;
+        var endTop = (lastRowRect.top - timelineRect.top) + (lastRowRect.height / 2) - 16;
+        var totalDist = endTop - startTop;
+
+        var currentY = startTop + (progress * totalDist);
+        rose.style.transform = 'translateY(' + currentY + 'px)';
 
         // Highlight passed rows
-        rows.forEach(function(row, idx) {
-          var node = row.querySelector('.flow-node');
-          if (node) {
-            var nodePos = node.offsetTop - firstNode.offsetTop;
-            if (translateY >= nodePos - 15) {
-              row.classList.add('active-step');
-            } else {
-              row.classList.remove('active-step');
-            }
+        rows.forEach(function(row) {
+          var r = row.getBoundingClientRect();
+          var rCenter = r.top + (r.height / 2);
+          if (rCenter <= triggerPoint + 20) {
+            row.classList.add('active-step');
+          } else {
+            row.classList.remove('active-step');
           }
         });
       }
 
-      window.addEventListener('scroll', function() {
+      function onScroll() {
         if (!ticking) {
           window.requestAnimationFrame(function() {
             updateRosePosition();
@@ -351,10 +360,17 @@ var observer=new IntersectionObserver(function(entries) {if(entries[0].isInterse
           });
           ticking = true;
         }
-      }, { passive: true });
+      }
 
+      window.addEventListener('scroll', onScroll, { passive: true });
       window.addEventListener('resize', updateRosePosition);
+      window.addEventListener('orientationchange', updateRosePosition);
+
+      // Run on initial load
+      updateRosePosition();
+      setTimeout(updateRosePosition, 100);
       setTimeout(updateRosePosition, 300);
+      setTimeout(updateRosePosition, 600);
     })();
     </script>
   </div>
