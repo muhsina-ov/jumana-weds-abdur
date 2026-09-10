@@ -1,6 +1,6 @@
 /* ==========================================================================
-   Luxury Digital Wedding Invitation: Jumaana Khan & Abdur Rehman
-   Custom Royal Styling & Mobile Unseen Border System
+   Luxury Digital Wedding Invitation: Abdur Rehman & Jumaana Khan
+   Custom Royal Groom-Side Styling & Mobile Unseen Border System
    ========================================================================== */
 
 /* ── Global Typography & Root Variables ── */
@@ -54,21 +54,21 @@ html, body {
 #rec2487446043 .t396__artboard,
 #rec2487446043 .t396__filter,
 #rec2487446043 .t396__carrier {
-  height: 1520px !important;
+  height: 1540px !important;
 }
 
 @media screen and (max-width: 640px) {
   #rec2487446043 .t396__artboard,
   #rec2487446043 .t396__filter,
   #rec2487446043 .t396__carrier {
-    height: 1580px !important;
+    height: 1600px !important;
   }
 }
 
 /* Extend the bottom torn-paper background element */
 #rec2487446043 .tn-elem[data-elem-id="1779527203760000001"] {
   top: 740px !important;
-  height: 820px !important;
+  height: 840px !important;
 }
 
 #rec2487446043 .tn-elem[data-elem-id="1779527203760000001"] .tn-atom,
@@ -238,9 +238,26 @@ html, body {
   font-family: var(--font-serif);
 }
 
+.matter-with {
+  display: inline-block;
+  color: var(--royal-gold);
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.1em;
+  margin: 2px 0;
+}
+
+.matter-relation {
+  font-size: 0.88em;
+  color: var(--text-muted);
+  font-style: italic;
+  display: block;
+  margin-top: 1px;
+}
+
 .matter-footer-note {
   display: block;
-  margin-top: 8px;
+  margin-top: 10px;
   font-size: 0.92em;
   color: var(--text-muted);
   font-style: italic;
@@ -254,6 +271,305 @@ html, body {
   padding-top: 30px !important;
   padding-bottom: 20px !important;
   background-color: var(--cream-bg) !important;
+}
+
+/* ── Custom Royal Timeline (Nikah Schedule) ── */
+.royal-timeline-wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.timeline-header-box {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.timeline-badge-tag {
+  font-family: var(--font-serif);
+  font-size: 10.5px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--royal-gold);
+  background: var(--royal-gold-soft);
+  padding: 4px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  border: 1px solid rgba(166, 125, 43, 0.25);
+}
+
+.timeline-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 6vw, 32px);
+  color: var(--royal-gold);
+  margin: 0 0 6px 0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(166, 125, 43, 0.2);
+}
+
+.timeline-subheading {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.custom-timeline-flow {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 380px;
+  margin: 0 auto;
+  padding: 10px 0;
+}
+
+/* Vertical central connecting line */
+.custom-timeline-flow::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 98px;
+  width: 1px;
+  background: linear-gradient(to bottom, rgba(166, 125, 43, 0.2), var(--royal-gold), rgba(166, 125, 43, 0.2));
+  z-index: 1;
+}
+
+.flow-row {
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.flow-time {
+  width: 82px;
+  text-align: right;
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--royal-maroon);
+  letter-spacing: 0.04em;
+  padding-right: 12px;
+}
+
+.flow-node {
+  width: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flow-diamond {
+  width: 9px;
+  height: 9px;
+  background: var(--royal-gold);
+  transform: rotate(45deg);
+  border-radius: 1px;
+  box-shadow: 0 0 0 3px var(--cream-bg);
+}
+
+.flow-rose-icon {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  background: var(--cream-bg);
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.flow-details {
+  flex: 1;
+  padding-left: 14px;
+}
+
+.flow-title {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--royal-maroon);
+  line-height: 1.25;
+}
+
+.flow-desc {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  line-height: 1.35;
+}
+
+/* ── Dedicated Valima (Reception) Section ── */
+#valimaInvitationSection {
+  background-color: var(--cream-bg);
+  padding: 30px 16px 40px 16px;
+  box-sizing: border-box;
+}
+
+.valima-royal-card {
+  background: var(--card-bg);
+  border: 1.5px solid #d9c9a8;
+  border-radius: 22px;
+  box-shadow: 0 10px 30px rgba(166, 125, 43, 0.15);
+  padding: 32px 22px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.valima-royal-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--royal-gold), transparent);
+}
+
+.valima-top-flourish,
+.valima-bottom-flourish {
+  margin: 4px 0 14px 0;
+}
+
+.valima-flourish-img {
+  width: 140px;
+  max-width: 50%;
+  height: auto;
+  display: inline-block;
+}
+
+.valima-tag {
+  font-family: var(--font-serif);
+  font-size: 10px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--royal-gold);
+  background: #f4ecdc;
+  padding: 4px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(166, 125, 43, 0.25);
+}
+
+.valima-main-title {
+  font-family: var(--font-serif);
+  font-size: clamp(22px, 6vw, 28px);
+  color: var(--royal-maroon);
+  margin: 0 0 14px 0;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.valima-host-statement {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 22px;
+}
+
+.valima-host-statement strong {
+  color: var(--royal-maroon);
+  font-family: var(--font-serif);
+  font-size: 1.05em;
+}
+
+.valima-couple-names {
+  color: var(--royal-maroon);
+  font-weight: 700;
+  font-family: var(--font-serif);
+}
+
+.valima-info-box {
+  background: rgba(249, 240, 224, 0.6);
+  border: 1px solid #e2d2b5;
+  border-radius: 14px;
+  padding: 16px 14px;
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: left;
+}
+
+.valima-info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  color: var(--text-primary);
+}
+
+.v-icon {
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.v-sub {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.v-venue-name {
+  color: var(--royal-maroon);
+  font-family: var(--font-serif);
+  font-size: 1.05em;
+}
+
+.valima-btn-row {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.valima-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 24px;
+  font-family: var(--font-serif);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.valima-action-btn.v-map-btn {
+  background: var(--royal-maroon);
+  color: #fff9f0;
+  box-shadow: 0 4px 12px rgba(90, 15, 27, 0.28);
+}
+
+.valima-action-btn.v-map-btn:hover {
+  background: var(--royal-maroon-dark);
+  transform: translateY(-1px);
+}
+
+.valima-action-btn.v-cal-btn {
+  background: transparent;
+  color: var(--royal-gold);
+  border: 1.5px solid var(--royal-gold);
+}
+
+.valima-action-btn.v-cal-btn:hover {
+  background: #f4ecdc;
 }
 
 /* ── Venues & Celebrations Block (rec2487446163) ── */
@@ -276,7 +592,7 @@ html, body {
   display: none !important;
 }
 
-/* HIDE the old single-card legacy background frames and misplaced flourishes */
+/* HIDE legacy single-card background frames */
 #rec2487446163 .tn-elem[data-elem-id="1773673546575"],
 #rec2487446163 .tn-elem[data-elem-id="1782460739526000001"],
 #rec2487446163 .tn-elem[data-elem-id="1782460739527000002"] {
@@ -513,10 +829,5 @@ html, body {
   .t-records {
     overflow-x: hidden !important;
     width: 100% !important;
-  }
-  
-  /* Ensure timeline text fits comfortably */
-  #rec2487446103 .tn-elem[data-elem-id="1763405219328"] .tn-atom {
-    font-size: 26px !important;
   }
 }
