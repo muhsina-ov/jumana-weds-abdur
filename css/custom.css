@@ -372,15 +372,42 @@ html, body {
   transform: rotate(45deg);
   border-radius: 1px;
   box-shadow: 0 0 0 3px var(--cream-bg);
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.flow-rose-icon {
-  width: 28px;
-  height: 28px;
+.flow-sliding-rose-track {
+  position: absolute;
+  top: 10px;
+  left: 82px;
+  width: 32px;
+  height: calc(100% - 20px);
+  pointer-events: none;
+  z-index: 4;
+}
+
+.flow-sliding-rose {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
-  background: var(--cream-bg);
+  background: radial-gradient(circle, #fff7eb 40%, rgba(255,247,235,0.8) 70%, transparent 100%);
   border-radius: 50%;
   padding: 2px;
+  filter: drop-shadow(0 2px 5px rgba(166, 125, 43, 0.35));
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+.flow-row.active-step .flow-diamond {
+  background: var(--royal-maroon);
+  transform: rotate(45deg) scale(1.15);
+}
+
+.flow-row.active-step .flow-time {
+  color: var(--royal-gold);
+  transition: color 0.3s ease;
 }
 
 .flow-details {
