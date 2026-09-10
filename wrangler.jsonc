@@ -1,0 +1,8 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "jumaana-weds-abdur-rehman",
+  "compatibility_date": "2026-09-10",
+  "assets": {
+    "directory": "./"
+  }
+}

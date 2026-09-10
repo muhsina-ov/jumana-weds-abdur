@@ -1,0 +1,435 @@
+/* ==========================================================================
+   Luxury Digital Wedding Invitation: Jumaana Khan & Abdur Rehman
+   Custom Royal Styling & Mobile Unseen Border System
+   ========================================================================== */
+
+/* ── Global Typography & Root Variables ── */
+:root {
+  --royal-maroon: #5a0f1b;
+  --royal-maroon-dark: #400912;
+  --royal-gold: #a67d2b;
+  --royal-gold-light: #d4af37;
+  --royal-gold-soft: #f4ecdc;
+  --cream-bg: #f9f0e0;
+  --card-bg: #fdf8ee;
+  --text-primary: #3d2b20;
+  --text-muted: #6a5140;
+  --font-serif: 'Cinzel', Georgia, serif;
+  --font-body: 'Ovo', Georgia, serif;
+  --font-script: 'Alex Brush', cursive;
+  --mobile-unseen-pad: clamp(16px, 5vw, 24px);
+}
+
+/* ── Mobile Viewport & Unseen Border Containment ── */
+html, body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  background-color: var(--cream-bg) !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Unseen border container: protects text from touching mobile screen edges */
+.mobile-unseen-border {
+  padding-left: var(--mobile-unseen-pad) !important;
+  padding-right: var(--mobile-unseen-pad) !important;
+  box-sizing: border-box !important;
+  max-width: 460px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  position: relative;
+}
+
+/* ── Hide obsolete / redundant block ── */
+#rec2487446153 {
+  display: none !important;
+}
+
+/* ── Floating Ampersand clean up ── */
+#rec2487446043 .tn-elem[data-elem-id="176340390975774690"] {
+  display: none !important;
+}
+
+/* ── Couple Hero Lockup Styling ── */
+#rec2487446043 .tn-elem[data-elem-id="1763402147625"] {
+  width: 100% !important;
+  max-width: 580px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: 250px !important;
+  height: auto !important;
+}
+
+#rec2487446043 .tn-elem[data-elem-id="1763402147625"] .tn-atom {
+  white-space: normal !important;
+  line-height: normal !important;
+}
+
+.couple-hero-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+
+.couple-card-mobile-frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+.couple-person {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+
+.person-name {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 7vw, 56px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--royal-maroon);
+  text-shadow: 0 1px 2px rgba(166, 125, 43, 0.25);
+  line-height: 1.15;
+}
+
+.person-relation {
+  font-family: var(--font-body);
+  font-size: clamp(12px, 3.4vw, 15px);
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  font-style: italic;
+  line-height: 1.35;
+  padding: 0 10px;
+}
+
+.couple-ampersand-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4px 0;
+}
+
+.ornate-gold-amp {
+  font-family: var(--font-serif);
+  font-size: clamp(24px, 5.5vw, 36px);
+  color: var(--royal-gold);
+  font-style: italic;
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(166, 125, 43, 0.3);
+}
+
+/* Adjust scroll down indicator position */
+#rec2487446043 .tn-elem[data-elem-id="1782235970225000002"] {
+  top: 550px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+#rec2487446043 .tn-elem[data-elem-id="1782235970224000001"] {
+  top: 590px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* ── Parents' Formal Invitation Matter ── */
+#rec2487446043 .tn-elem[data-elem-id="1780748008617000005"] {
+  width: 90% !important;
+  max-width: 520px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  top: 1040px !important;
+  height: auto !important;
+}
+
+#rec2487446043 .tn-elem[data-elem-id="1780748008617000005"] .tn-atom {
+  white-space: normal !important;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  padding: 12px 16px !important;
+}
+
+.parents-invitation-matter {
+  text-align: center;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
+
+.matter-bismillah {
+  font-size: clamp(20px, 5vw, 28px);
+  color: var(--royal-gold);
+  margin-bottom: 6px;
+  font-family: 'Traditional Arabic', 'Scheherazade New', serif;
+  direction: rtl;
+}
+
+.matter-salutation {
+  font-family: var(--font-serif);
+  font-size: clamp(10px, 2.8vw, 12px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  opacity: 0.9;
+  margin-bottom: 12px;
+}
+
+.matter-body {
+  font-size: clamp(13px, 3.6vw, 16px);
+  line-height: 1.65;
+  color: var(--text-primary);
+}
+
+.matter-body strong {
+  color: var(--royal-maroon);
+  font-family: var(--font-serif);
+  font-size: 1.05em;
+  letter-spacing: 0.03em;
+}
+
+.couple-highlight {
+  font-weight: 600;
+  color: var(--royal-maroon);
+  font-family: var(--font-serif);
+}
+
+.matter-footer-note {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ── Dual Venue Showcase Block (rec2487446163) ── */
+#rec2487446163 {
+  padding-top: 20px !important;
+  padding-bottom: 60px !important;
+  background-color: var(--cream-bg) !important;
+}
+
+#rec2487446163 .t396__artboard {
+  height: auto !important;
+  min-height: 560px !important;
+  overflow: visible !important;
+}
+
+#rec2487446163 .tn-elem[data-elem-id="1710614957366"] {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+
+.venues-outer-wrapper {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.venues-header-title {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 5.5vw, 28px);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--royal-gold);
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.dual-venue-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .dual-venue-cards {
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+  }
+}
+
+.luxury-venue-card {
+  width: 100%;
+  max-width: 360px;
+  background: var(--card-bg);
+  border: 1px solid #d9c9a8;
+  border-radius: 18px;
+  box-shadow: 0 6px 18px rgba(166, 125, 43, 0.1);
+  padding: 24px 20px;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.luxury-venue-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--royal-gold), transparent);
+}
+
+.luxury-venue-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(166, 125, 43, 0.18);
+}
+
+.venue-gold-tag {
+  font-family: var(--font-serif);
+  font-size: 10.5px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--royal-gold);
+  background: #f4ecdc;
+  padding: 4px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(166, 125, 43, 0.25);
+}
+
+.venue-date-badge {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--royal-maroon);
+  margin-bottom: 4px;
+}
+
+.venue-ceremony-time {
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.venue-place-name {
+  font-family: var(--font-serif);
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--royal-maroon);
+  margin: 0 0 10px 0;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.venue-street-address {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin: 0 0 20px 0;
+  min-height: 40px;
+}
+
+.venue-btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.venue-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 20px;
+  border-radius: 24px;
+  font-family: var(--font-serif);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+.venue-action-btn.maps-btn {
+  background: var(--royal-maroon);
+  color: #fff9f0;
+  box-shadow: 0 4px 12px rgba(90, 15, 27, 0.28);
+}
+
+.venue-action-btn.maps-btn:hover {
+  background: var(--royal-maroon-dark);
+  transform: translateY(-1px);
+}
+
+.venue-action-btn.cal-btn {
+  background: transparent;
+  color: var(--royal-gold);
+  border: 1.5px solid var(--royal-gold);
+}
+
+.venue-action-btn.cal-btn:hover {
+  background: #f4ecdc;
+  color: #7b581b;
+}
+
+/* ── Closing Section & Couple Hand Photo ── */
+#rec2487446183 {
+  padding-bottom: 60px !important;
+  background-color: var(--cream-bg) !important;
+}
+
+.couple-photo-showcase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto 30px auto;
+  max-width: 320px;
+}
+
+.couple-photo-frame {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  padding: 6px;
+  background: linear-gradient(135deg, var(--royal-gold), #f9f0e0, var(--royal-gold));
+  box-shadow: 0 8px 24px rgba(166, 125, 43, 0.22);
+}
+
+.couple-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
+
+/* ── General Responsive Text Overrides ── */
+@media screen and (max-width: 640px) {
+  /* Prevent any element from causing horizontal scrolling */
+  .t-records {
+    overflow-x: hidden !important;
+    width: 100% !important;
+  }
+  
+  /* Ensure timeline text fits comfortably */
+  #rec2487446103 .tn-elem[data-elem-id="1763405219328"] .tn-atom {
+    font-size: 26px !important;
+  }
+}
