@@ -431,6 +431,99 @@ html, body {
   line-height: 1.35;
 }
 
+/* ── Groom's Parents Valima Invitation Card ── */
+#recValimaInvite {
+  position: relative;
+  z-index: 5;
+}
+
+.groom-valima-invite-card {
+  background: #fffdf9;
+  border: 1.5px solid #d9c9a8;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(166, 125, 43, 0.12);
+  padding: 32px 20px;
+  max-width: 440px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.groom-valima-invite-card .valima-top-flourish,
+.groom-valima-invite-card .valima-bottom-flourish {
+  margin: 2px 0 10px 0;
+}
+
+.groom-valima-invite-card .valima-flourish-img {
+  width: 140px;
+  max-width: 50%;
+  height: auto;
+  display: inline-block;
+}
+
+.valima-tag-badge {
+  font-family: var(--font-serif);
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--royal-gold);
+  background: var(--royal-gold-soft);
+  padding: 4px 14px;
+  border-radius: 20px;
+  display: inline-block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  border: 1px solid rgba(166, 125, 43, 0.25);
+}
+
+.valima-invite-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(20px, 5.2vw, 26px);
+  color: var(--royal-gold);
+  margin: 10px 0 14px 0;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 2px rgba(166, 125, 43, 0.15);
+}
+
+.valima-invite-body {
+  font-family: var(--font-body);
+  font-size: clamp(13px, 3.5vw, 15.5px);
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.valima-invite-body strong {
+  color: var(--royal-maroon);
+  font-family: var(--font-serif);
+  font-size: 1.05em;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+.valima-event-detail-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 14px 0 8px 0;
+  padding: 8px 18px;
+  background: rgba(166, 125, 43, 0.08);
+  border: 1px solid rgba(166, 125, 43, 0.3);
+  border-radius: 24px;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  color: var(--royal-maroon);
+  font-weight: 600;
+}
+
+.valima-chip-sep {
+  color: var(--royal-gold);
+}
+
 /* ── Venues & Celebrations Block (rec2487446163) ── */
 #rec2487446163 {
   padding-top: 20px !important;
